@@ -1,6 +1,6 @@
 from django.http import *
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from election.profile.models import UserProfile
 
 def home(request):
@@ -43,3 +43,7 @@ def signup_view(request):
             return render(request,'login_view.html')
     else:
         return render(request, 'signup_view.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
