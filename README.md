@@ -45,7 +45,8 @@ Bir kısı sürüm atlarsa sağ taraf sıfırlanır
 
 git config --global user.name "isim"
 git config --global user.email "email"
-git init .
+git init . (init boşluk nokta)
+
 git add --all
 git remote add origin <repo url>
 git commit -m "mesaj"
