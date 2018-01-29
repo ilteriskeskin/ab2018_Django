@@ -48,6 +48,6 @@ git config --global user.email "email"
 git init .
 
 git add --all
-git commit -m "mesaj"
 git remote add origin <repo url>
+git commit -m "mesaj"
 git push origin master

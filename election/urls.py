@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home),
     url(r'^deneme/', views.deneme),
+    url(r'^login_view/', views.login_view),
+    url(r'^signup_view/', views.signup_view),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

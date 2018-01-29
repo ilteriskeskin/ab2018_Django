@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="starter-template">
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h3><a href="/login_view">Login</a></h3>
+        <h3><a href="/signup_view">Signup</a></h3>
+
+        <form action="/login_view/" method="post">{% csrf_token %}
+
+            <table border="2">
+
+                <center>
+
+                    İsim: <input type="email" name="email"><br>
+
+                    Parola: <input type="password" name="password"><br>
+
+
+                    <input type="submit" value="Gönder">
+
+
+                </center>
+
+            </table>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
