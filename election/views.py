@@ -2,9 +2,11 @@ from django.http import *
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from election.profile.models import UserProfile
+from election.models import Survey
 
 def home(request):
-       return render(request, "index.html")
+    surveys = Survey.objects.all()
+    return render(request, "index.html", {'surveys': surveys})
 
 def deneme(request):
     return render(request, 'deneme.html', locals())
