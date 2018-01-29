@@ -14,11 +14,23 @@
 
         </p>
 
-    </div>
+        <form action="/" method="post">{% csrf_token %}
 
-    {{ name }}
-    <br>
-    {{ email }}
+            <table border="2">
+
+                <center>
+
+                    Ad: <input type="text" name="ad"><br>
+                    Email: <input type="text" name="email"><br>
+                    <input type="submit" value="Gönder">
+
+                </center>
+
+            </table>
+
+        </form>
+
+    </div>
 
 </div>
 
