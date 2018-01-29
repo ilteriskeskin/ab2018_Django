@@ -45,8 +45,8 @@ Bir kısı sürüm atlarsa sağ taraf sıfırlanır
 
 git config --global user.name "isim"
 git config --global user.email "email"
-git init . \n
+git init . <br>
 git add --all <br>
-git remote add origin <repo url>
-git commit -m "mesaj"
-git push origin master
+git remote add origin <repo url> <br>
+git commit -m "mesaj" <br>
+git push origin master <br>
