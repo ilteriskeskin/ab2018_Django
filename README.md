@@ -50,4 +50,4 @@ git init .
 git add --all
 git remote add origin <repo url>
 git commit -m "mesaj"
-git push origin master 
+git push origin master
