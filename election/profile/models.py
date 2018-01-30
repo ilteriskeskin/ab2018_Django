@@ -1,6 +1,27 @@
 from django.db import models
-
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+
+class UserCity(models.Model):
+    name = models.CharField('Şehir', max_length=50)
+    code = models.CharField('Plaka', max_length=3)
+
+    class Meta:
+        verbose_name = 'Şehir'
+        verbose_name_plural = 'Şehirler'
+
+    def __str__(self):
+        return str(self.name)
+
+class UserTown(models.Model):
+    name = models.CharField('İlçeler', max_length=60)
+    city = models.ForeignKey(UserCity, verbose_name='Şehir', null=False, blank=False)
+
+    class Meta:
+        verbose_name = 'İlçe'
+        verbose_name_plural = 'İlçeler'
+
+    def __str__(self):
+        return str(self.name)
 
 class UserProfileManager(BaseUserManager):
     use_in_migrations = True
@@ -21,6 +42,7 @@ class UserProfileManager(BaseUserManager):
     def create_superuser(self, email=None, password=None):
         return self._create_user(email, password, True, True)
 
+
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     name = models.CharField('İsim', max_length=100)
     email = models.EmailField('E-Posta', max_length=100, unique=True)
@@ -28,6 +50,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField("Staff?", null=False, blank=False, default=False)
     is_superuser = models.BooleanField("Superuser?", null=False, blank=False, default=False)
     created_at = models.DateTimeField('Kayıt Tarihi', auto_now_add=True)
+    town = models.ForeignKey(UserTown, verbose_name='İlçeler', null=True, blank=True)
 
     USERNAME_FIELD = 'email'
     objects = UserProfileManager()

@@ -5,7 +5,7 @@
 <div class="container">
 
     <div class="starter-template">
-        <br><br><br><br><br>
+        <br><br><br>
         <h1>Bootstrap starter template</h1>
 
         <p class="lead">Use this document as
@@ -13,13 +13,23 @@
         a way to quickly start any new project.
 
         </p>
+        <br>
+        <h2>
+            Yapılan Araştırmalar
+            <br>
+        </h2>
         <ul>
         {% for i in surveys %}
             <li>
+                <hr>
+                <h4>
             {{ i }}
+            {{i.created_at }}
+                </h4>
             </li>
         {% endfor %}
         </ul>
+        <hr>
 
     </div>
 
